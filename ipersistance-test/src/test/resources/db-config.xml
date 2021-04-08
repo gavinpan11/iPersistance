@@ -1,0 +1,15 @@
+<configuration>
+    <datasource>
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://192.168.0.101:3306/ipersistance?useUnicode=true&amp;characterEncoding=utf8" />
+        <property name="username" value="root" />
+        <property name="password" value="123456" />
+        <property name="initPoolSize" value="3" />
+        <property name="maxPoolSize" value="10" />
+        <property name="maxIdleTime" value="60000" />
+    </datasource>
+
+    <mappers>
+        <mapper resource="mapper/UserMapper.xml" />
+    </mappers>
+</configuration>

@@ -1,0 +1,28 @@
+<!-- namespace为本模块(user模块)的唯一标识 -->
+<mapper namespace="com.gavin11.ipersistance.test.mapper.UserMapper">
+    <!-- id属性指定本模块的唯一标识, resultType指定结果集要映射到的对象  -->
+    <select id="findAll" resultType="com.gavin11.ipersistance.test.pojo.User">
+        select * from user
+    </select>
+
+    <!-- paramType指定了携带条件参数值得对象 -->
+    <select id="findByIdName" resultType="com.gavin11.ipersistance.test.pojo.User" paramType="com.gavin11.ipersistance.test.pojo.User">
+        select * from user where username=#{username} and id=#{id}
+    </select>
+
+    <select id="simpleFindByIdName" resultType="com.gavin11.ipersistance.test.pojo.User">
+        select * from user where username=#{username} and id=#{id}
+    </select>
+
+    <insert id="insertOne" paramType="com.gavin11.ipersistance.test.pojo.User">
+        insert into user(id,username,password,birthday) values(#{id},#{username},#{password},#{birthday})
+    </insert>
+
+    <update id="updateById" paramType="com.gavin11.ipersistance.test.pojo.User">
+        update user set username=#{username} where id=#{id}
+    </update>
+
+    <delete id="deleteById" paramType="com.gavin11.ipersistance.test.pojo.User">
+        delete from user where id=#{id}
+    </delete>
+</mapper>

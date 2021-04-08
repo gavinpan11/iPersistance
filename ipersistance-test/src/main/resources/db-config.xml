@@ -1,0 +1,19 @@
+<configuration>
+    <!-- 数据源 -->
+    <datasource>
+        <!-- 数据库连接参数 -->
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://192.168.0.101:3306/ipersistance?useUnicode=true&amp;characterEncoding=utf8" />
+        <property name="username" value="root" />
+        <property name="password" value="123456" />
+        <!-- 以下为连接池相关参数 -->
+        <property name="initPoolSize" value="3" />
+        <property name="maxPoolSize" value="10" />
+        <property name="maxIdleTime" value="60000" />
+    </datasource>
+
+    <!-- *Mapper.xml文件位置 -->
+    <mappers>
+        <mapper resource="mapper/UserMapper.xml" />
+    </mappers>
+</configuration>
